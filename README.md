@@ -2,6 +2,11 @@
 > Provides an `Aws\CacheInterface\CacheInterface` compliant cache for the
 AWS SDK which uses the laravel Cache classes.
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Code Coverage][ico-coverage]][link-coverage]
+
 ### Purpose
 When using EC2 Instance IAM Roles or ECS Task IAM Roles the AWS php sdk automatically performs
 lookups against the ec2 metadata api (169.254.169.254) to get credentials. These by default
@@ -54,3 +59,12 @@ return [
     'cache' => env('LARAVEL_AWS_CACHE_CACHE', 'file')
 ];
 ```
+
+[ico-version]: https://img.shields.io/packagist/v/lukewaite/laravel-aws-cache-adapter.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/lukewaite/laravel-aws-cache-adapter/master.svg?style=flat-square
+[ico-coverage]: https://img.shields.io/scrutinizer/coverage/g/lukewaite/laravel-aws-cache-adapter/master.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/lukewaite/laravel-aws-cache-adapter
+[link-travis]: https://travis-ci.org/lukewaite/laravel-aws-cache-adapter
+[link-coverage]: https://scrutinizer-ci.com/g/lukewaite/laravel-aws-cache-adapter/?branch=master
