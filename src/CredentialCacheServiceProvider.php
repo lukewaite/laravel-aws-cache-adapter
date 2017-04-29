@@ -31,7 +31,6 @@ class CredentialCacheServiceProvider extends ServiceProvider
      */
     public function boot(CacheManager $manager)
     {
-
         $this->publishes([
             __DIR__ . '/../config/laravel-aws-cache.php' => config_path('laravel-aws-cache.php')
         ]);
