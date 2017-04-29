@@ -12,9 +12,9 @@
 namespace LukeWaite\LaravelAwsCacheAdapter;
 
 use Illuminate\Cache\CacheManager;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class CredentialCacheServiceProvider extends ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * {@inheritdoc}
