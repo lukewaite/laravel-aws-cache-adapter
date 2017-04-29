@@ -9,7 +9,8 @@ use PHPUnit\Framework\TestCase;
 class LaravelCacheAdapterTest extends TestCase
 {
     /** @var  \Mockery\MockInterface */
-    protected $manager, $repository;
+    protected $manager;
+    protected $repository;
 
     public function tearDown()
     {
@@ -47,7 +48,6 @@ class LaravelCacheAdapterTest extends TestCase
 
         $adapter = new LaravelCacheAdapter($this->manager, 'file', '');
         $adapter->set('key', 'value', 59);
-
     }
 
     public function testSetGreaterThan60SecondsRoundsDown()
@@ -56,7 +56,6 @@ class LaravelCacheAdapterTest extends TestCase
 
         $adapter = new LaravelCacheAdapter($this->manager, 'file', '');
         $adapter->set('key', 'value', 61);
-
     }
 
     public function testSetGreaterThan120SecondsRoundsDown()
@@ -65,6 +64,5 @@ class LaravelCacheAdapterTest extends TestCase
 
         $adapter = new LaravelCacheAdapter($this->manager, 'file', '');
         $adapter->set('key', 'value', 121);
-
     }
 }
