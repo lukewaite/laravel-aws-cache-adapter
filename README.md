@@ -9,3 +9,4 @@ of trouble or slowdowns if the metadata api is slow/not responding.
 This package allows you to configure certain laravel filesystems to be automatically loaded with a `CacheInterface` that
 will use a laravel cache store to cache the STS tokens returned, reducing requests to the metadata api.
 
+
