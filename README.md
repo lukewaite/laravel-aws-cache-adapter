@@ -21,7 +21,7 @@ reducing requests to the metadata api.
 # Usage
 
 ### Direct Usage of the Adapter
-The `LaravelCacheAdapter` can be passed directly in to Flysystem your `config/filesystems.php`
+The `LaravelCacheAdapter` can be passed directly into Flysystem in your `config/filesystems.php`
 ```
     's3' => [
         'driver'      => 's3',
