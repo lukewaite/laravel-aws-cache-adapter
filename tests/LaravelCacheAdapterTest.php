@@ -32,7 +32,6 @@ class LaravelCacheAdapterTest extends TestCase
 
         $adapter = new LaravelCacheAdapter($this->manager, 'file', 'test');
         $this->assertEquals('testValue', $adapter->get('key'));
-
     }
 
     public function testRemoveWithoutPrefix()
