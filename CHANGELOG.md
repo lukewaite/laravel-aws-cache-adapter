@@ -1,5 +1,10 @@
 # Release Notes for 1.x
 
+## v1.1.1 (2019-05-14)
+
+* Fix: Caching works a lot better when the getter does a `return`
+* Fix: Support passing 0 as cache TTL for unlimited lifetime
+
 ## v1.1.0 (2019-05-13)
 
 * Fix: Update service provider to correctly inject configuration

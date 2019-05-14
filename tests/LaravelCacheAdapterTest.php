@@ -31,7 +31,8 @@ class LaravelCacheAdapterTest extends TestCase
         $this->repository->shouldReceive('get')->with('aws_credentials_testkey')->once()->andReturn('testValue');
 
         $adapter = new LaravelCacheAdapter($this->manager, 'file', 'test');
-        $adapter->get('key');
+        $this->assertEquals('testValue', $adapter->get('key'));
+
     }
 
     public function testRemoveWithoutPrefix()
@@ -64,5 +65,13 @@ class LaravelCacheAdapterTest extends TestCase
 
         $adapter = new LaravelCacheAdapter($this->manager, 'file', '');
         $adapter->set('key', 'value', 121);
+    }
+
+    public function testSet0Retains0()
+    {
+        $this->repository->shouldReceive('put')->with('aws_credentials_key', 'value', 0)->once();
+
+        $adapter = new LaravelCacheAdapter($this->manager, 'file', '');
+        $adapter->set('key', 'value', 0);
     }
 }
