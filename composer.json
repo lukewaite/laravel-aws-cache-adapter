@@ -16,11 +16,11 @@
   },
   "require": {
     "aws/aws-sdk-php": "^3.20",
-    "illuminate/support": "5.*"
+    "illuminate/support": "8.*"
   },
   "require-dev": {
     "mockery/mockery": "^0.9.6",
-    "laravel/framework": ">5.1",
+    "laravel/framework": ">8",
     "phpunit/phpunit": "~4.8",
     "squizlabs/php_codesniffer": "^2.8",
     "scrutinizer/ocular": "^1.3"

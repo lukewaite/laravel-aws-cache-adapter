@@ -59,7 +59,7 @@ class LaravelCacheAdapter implements CacheInterface
      */
     public function set($key, $value, $ttl = 0)
     {
-        $this->getCache()->put($this->generateKey($key), $value, $this->convertTtl($ttl));
+        $this->getCache()->put($this->generateKey($key), $value, $ttl);
     }
 
     /**
@@ -71,30 +71,6 @@ class LaravelCacheAdapter implements CacheInterface
     protected function generateKey($key)
     {
         return $this->prefix . $key;
-    }
-
-    /**
-     * The AWS CacheInterface takes input in seconds, but the Laravel Cache classes use minutes. To support
-     * this intelligently, we round up to one minute for any value less than 60 seconds, and round down to
-     * the nearest whole minute for any value over one minute. First, if the passed in TTL is 0 we return
-     * 0 to allow an unlimited cache lifetime.
-     *
-     * @param $ttl
-     * @return float|int
-     */
-    protected function convertTtl($ttl)
-    {
-        if ($ttl == 0) {
-            return 0;
-        }
-
-        $minutes = floor($ttl / 60);
-
-        if ($minutes == 0) {
-            return 1;
-        } else {
-            return $minutes;
-        }
     }
 
     /**
